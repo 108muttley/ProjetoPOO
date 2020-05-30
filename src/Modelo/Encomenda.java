@@ -7,14 +7,14 @@ public class Encomenda {
     private String codEncomenda;
     private String codUtilizador;
     private String codLoja;
-    private double preco;
+    private double peso;
     private List<LinhaEncomenda> linhadeEncomenda = new ArrayList<>();
 
     public Encomenda(){
         this.codEncomenda = "Invalid";
         this.codUtilizador = "invalid";
         this.codLoja = "Invalid";
-        this.preco = 0;
+        this.peso = 0;
         this.linhadeEncomenda = new ArrayList<>();
     }
 
@@ -23,7 +23,7 @@ public class Encomenda {
         this.codEncomenda = codEncomenda;
         this.codUtilizador = codUtilizador;
         this.codLoja = codLoja;
-        this.preco = preco;
+        this.peso = peso;
         for (LinhaEncomenda a:
              linhadeEncomenda) {
             this.linhadeEncomenda.add(a.clone());
@@ -34,7 +34,7 @@ public class Encomenda {
         this.codEncomenda = outro.codEncomenda;
         this.codUtilizador = outro.codUtilizador;
         this.codLoja = outro.codLoja;
-        this.preco = outro.preco;
+        this.peso = outro.peso;
         for (LinhaEncomenda a:
              outro.linhadeEncomenda) {
             this.linhadeEncomenda.add(a.clone());
@@ -65,12 +65,12 @@ public class Encomenda {
         this.codLoja = codLoja;
     }
 
-    public double getPreco() {
-        return this.preco;
+    public double getPeso() {
+        return this.peso;
     }
 
-    public void setPreco(double preco) {
-        this.preco = preco;
+    public void setPeso(double peso) {
+        this.peso = peso;
     }
 
     public List<LinhaEncomenda> getLinhadeEncomenda() {
@@ -97,7 +97,7 @@ public class Encomenda {
         return this.codEncomenda.equals(a.getCodEncomenda())
                 && this.codUtilizador.equals(a.getCodUtilizador())
                 && this.codLoja.equals(a.getCodLoja())
-                && this.preco == a.getPreco()
+                && this.peso == a.getPeso()
                 && this.linhadeEncomenda.equals(a.getLinhadeEncomenda());
     }
 
@@ -111,7 +111,7 @@ public class Encomenda {
         return "Código da encomenda: " + this.codEncomenda
                 + " Código do utilizador: " + this.codUtilizador
                 + " Código da loja " + this.codLoja
-                + " Preço " + this.preco
+                + " Peso " + this.peso
                 + this.linhadeEncomenda.toString();
     }
 }
