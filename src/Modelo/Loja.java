@@ -11,6 +11,7 @@ public class Loja {
     public Loja(String codLoja, String nomeLoja) {
         this.codLoja = codLoja;
         this.nomeLoja = nomeLoja;
+
     }
     public Loja( Loja outro) {
         this.codLoja = outro.codLoja;
